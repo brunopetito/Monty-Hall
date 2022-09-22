@@ -47,7 +47,7 @@ function App() {
       >Abra a porta de número {open} (clique na maçaneta)</span>):null}
 
 
-      <div className="flex gap-2 sm:mt-10 mt-4">
+      <div className="flex gap-2 sm:mt-10 mt-8">
 
       <Door number={1} havePresent={1 === sort? true:false} selected={choosen ===1? true: false} controlarSelected={controlarSelected}/> 
 
