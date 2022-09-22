@@ -29,8 +29,8 @@ function App() {
   }
 
   return (
-    <div className="m-auto flex  flex-col items-center sm:h-screen sm:w-full p-9 min-h-screen  bg-gradient-to-l from-cyan-500 to-sky-500">
-      <h1 className="text-5xl text-zinc-100 font-display ">Paradoxo de Monty Hall</h1>
+    <div className="m-auto flex  flex-col items-center sm:h-screen sm:w-full sm:p-9 p-6 min-h-screen  bg-gradient-to-l from-cyan-500 to-sky-500">
+      <h1 className="sm:text-5xl text-zinc-100 text-3xl font-display ">Paradoxo de Monty Hall</h1>
       <p className="mt-9 text-zinc-100 text-lg font-mono max-w-xl" >Como jogar:
           Atrás de uma das portas tem um prêmio e das outras duas nada. O jogador escolhe uma porta,em seguida clica em continuar e o jogo revela uma outra porta vazia, depois disso o jogador decide se troca ou se permanece com a porta escolhida.
 
@@ -42,12 +42,12 @@ function App() {
       
       {open?(
       <span
-        className="mt-5 text-zinc-100 font-bold text-2xl"
+        className="sm:mt-5 text-zinc-100 font-bold sm:text-2xl m-3"
       
       >Abra a porta de número {open} (clique na maçaneta)</span>):null}
 
 
-      <div className="flex gap-2 mt-10">
+      <div className="flex gap-2 sm:mt-10">
 
       <Door number={1} havePresent={1 === sort? true:false} selected={choosen ===1? true: false} controlarSelected={controlarSelected}/> 
 

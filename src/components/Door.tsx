@@ -16,9 +16,9 @@ export default function Door({number,havePresent,selected,controlarSelected}:Pro
 
 
   return(
-    <div className="sm:w-52 flex flex-col  items-center relative w-28">
+    <div className="sm:w-52 flex flex-col  items-center relative w-full">
       <div 
-          className={`sm:w-44 sm:h-80 bg-yellow-800  border-r-4 border-t-4 border-l-4 border-yellow-900 w-20 h-32
+          className={`sm:w-44 sm:h-80 bg-yellow-800  border-r-4 border-t-4 border-l-4 border-yellow-900 w-[90%] h-32
           ${open && 'bg-zinc-700 z-10'} ${(selected && !open) &&'border-yellow-300 '}`}
 
           onClick={()=>controlarSelected(number)}
@@ -29,8 +29,8 @@ export default function Door({number,havePresent,selected,controlarSelected}:Pro
         onClick={()=>controlarSelected(number)}
         >{number}</span>
 
-
-        <button className={`sm:h-7 sm:w-7 bg-zinc-100 rounded-full absolute  sm:top-36 left-7  hover:cursor-pointer h-4 w-4 top-16  ${(selected && !open) && 'bg-yellow-300 '}`}
+        
+        <button className={`sm:h-7 sm:w-7 bg-zinc-100 rounded-full absolute  sm:top-36 hover:cursor-pointer h-4 w-4 top-16 sm:left-7 left-3 ${(selected && !open) && 'bg-yellow-300 '}`}
         onClick={()=>setOpen(true)}
         >
         </button>
@@ -45,7 +45,7 @@ export default function Door({number,havePresent,selected,controlarSelected}:Pro
         
         
         ): null}
-      <div className={`sm:w-48 sm:h-3  h-1 w-24 ${(selected && !open) ?'bg-yellow-300 ':'bg-zinc-600'}`}>
+      <div className={`sm:w-48 sm:h-3  h-1 w-20 ${(selected && !open) ?'bg-yellow-300 ':'bg-zinc-600'}`}>
         
       </div>
       
