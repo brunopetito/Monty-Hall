@@ -36,7 +36,7 @@ function App() {
     <div className="m-auto flex  flex-col items-center sm:h-screen sm:w-full sm:p-9 p-6 min-h-screen  bg-gradient-to-l from-cyan-500 to-sky-500">
       <h1 className="sm:text-5xl text-zinc-100 text-3xl font-display ">Paradoxo de Monty Hall</h1>
       <p className="mt-9 text-zinc-100 text-lg font-mono max-w-xl" >Como jogar:
-          Atrás de uma das portas tem um prêmio e das outras duas nada. O jogador escolhe uma porta,em seguida clica em continuar e o jogo revela uma outra porta vazia, depois disso o jogador decide se troca ou se permanece com a porta escolhida.
+          Atrás de uma das portas tem um prêmio e das outras duas nada. O jogador <span className="text-yellow-300 font-semibold">escolhe uma porta</span>,em seguida clica em continuar e o jogo revela uma outra porta vazia, depois disso o jogador decide se troca ou se permanece com a porta escolhida.
 
       </p>
 
@@ -46,9 +46,10 @@ function App() {
       
       {(open && choosen)?(
       <span
-        className="sm:mt-5 text-zinc-100 font-bold sm:text-2xl mt-4"
+        className="sm:mt-5 text-zinc-100 font-bold sm:text-2xl mt-4 max-w-xl"
       
-      >A porta de número {open} não possui prêmio, você deseja trocar sua porta ? (clique na maçaneta para abrir)</span>):<span className="mt-2 text-yellow-200 text-2xl">{erro}</span>}
+      >A porta de número {open} não possui prêmio, 
+      você deseja trocar sua porta ? (clique na maçaneta para abrir)</span>):<span className="mt-2 text-yellow-200 text-2xl">{erro}</span>}
 
 
       <div className="flex gap-2 sm:mt-10 mt-8">
