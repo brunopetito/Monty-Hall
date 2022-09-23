@@ -5,8 +5,7 @@ function App() {
   const [choosen,setChoosen]= useState(0)
   const [sort,setSort] = useState(0)
   const [open,setOpen] = useState(0)
-  const [qtd,setQtd]= useState([1,2,3])
- 
+  const [erro,setErro]= useState('')
  
 
 
@@ -16,10 +15,15 @@ function App() {
   },[])
 
   function openDoor(){
-    const array =[1,2,3]
-    const novoArray = array.filter(numero => numero != sort && numero != choosen)
-  
-    setOpen(novoArray[0])
+    if(choosen){
+      const array =[1,2,3]
+      const novoArray = array.filter(numero => numero != sort && numero != choosen)
+    
+      setOpen(novoArray[0])
+    }else{
+      setErro('Você não escolheu uma porta!, clique nela!')
+    }
+   
     
   }
   
@@ -40,20 +44,20 @@ function App() {
       onClick={openDoor}
       >Continuar</button>
       
-      {open?(
+      {(open && choosen)?(
       <span
         className="sm:mt-5 text-zinc-100 font-bold sm:text-2xl mt-4"
       
-      >Abra a porta de número {open} (clique na maçaneta)</span>):null}
+      >A porta de número {open} não possui prêmio, você deseja trocar sua porta ? (clique na maçaneta para abrir)</span>):<span className="mt-2 text-yellow-200 text-2xl">{erro}</span>}
 
 
       <div className="flex gap-2 sm:mt-10 mt-8">
 
-      <Door number={1} havePresent={1 === sort? true:false} selected={choosen ===1? true: false} controlarSelected={controlarSelected}/> 
+      <Door number={1} havePresent={1 === sort? true:false} selected={choosen ===1? true: false} controlarSelected={controlarSelected} openTheDoor={(open===1 && choosen)?true:false}/> 
 
-      <Door number={2} havePresent={2 === sort? true:false} selected={choosen === 2? true: false} controlarSelected={controlarSelected} />
+      <Door number={2} havePresent={2 === sort? true:false} selected={choosen === 2? true: false} controlarSelected={controlarSelected} openTheDoor={(open===2 && choosen)? true:false}/>
 
-      <Door number={3} havePresent={3 === sort? true:false} selected={choosen ===3? true: false} controlarSelected={controlarSelected}/> 
+      <Door number={3} havePresent={3 === sort? true:false} selected={choosen ===3? true: false} controlarSelected={controlarSelected} openTheDoor={(open===3 && choosen) ? true:false}/> 
       
 
       

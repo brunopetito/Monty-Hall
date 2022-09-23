@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react"
+import { SyntheticEvent, useEffect, useState } from "react"
 import Gift from '../assets/gift.svg'
 
 interface Props{
@@ -6,20 +6,23 @@ interface Props{
   havePresent:boolean
   selected:boolean
   controlarSelected:Function
+  openTheDoor:boolean;
 }
 
 
 
-export default function Door({number,havePresent,selected,controlarSelected}:Props){
-  const [open,setOpen] = useState(false)
+export default function Door({number,havePresent,selected,controlarSelected,openTheDoor}:Props){
+  const [open,setOpen] = useState(openTheDoor?true:false)
 
+  
+ 
 
 
   return(
     <div className="sm:w-52 flex flex-col  items-center relative w-full">
       <div 
           className={`sm:w-44 sm:h-80 bg-yellow-800  border-r-4 border-t-4 border-l-4 border-yellow-900 w-[90%] h-32
-          ${open && 'bg-zinc-700 z-10'} ${(selected && !open) &&'border-yellow-300 '}`}
+          ${(open || openTheDoor) && 'bg-zinc-700 z-10'} ${(selected && !open) &&'border-yellow-300 '}`}
 
           onClick={()=>controlarSelected(number)}
           
